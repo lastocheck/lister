@@ -5,7 +5,7 @@ import { User } from '../types/User';
 import userReducer from './User/userReducer';
 
 export type RootState = {
-    user: User | null;
+    user: User;
 };
 
 const rootReducer = combineReducers({ user: userReducer });

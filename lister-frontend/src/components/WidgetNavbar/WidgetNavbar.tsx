@@ -1,11 +1,9 @@
 import React from 'react';
 import { Nav, NavItem } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { getUserWidgetList } from '../../services/DataService';
 import { useAppSelector } from '../../store/hooks';
 
 const WidgetNavbar = () => {
-    //TODO: create user object in global store and request it here
     const user = useAppSelector((state) => state.user);
     if (user && user.widgets.length > 0) {
         const widgets = user.widgets;
@@ -13,7 +11,7 @@ const WidgetNavbar = () => {
             <Nav variant="pills" className="justify-content-center">
                 {widgets.map((widget) => {
                     return (
-                        <NavItem>
+                        <NavItem key={widget.id}>
                             <Nav.Link
                                 as={Link}
                                 href={widget.name.toLowerCase().replaceAll(' ', '_')}

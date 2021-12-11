@@ -1,9 +1,7 @@
 import { PayloadAction } from '@reduxjs/toolkit';
 import { User } from '../../types/User';
-import { Action } from 'redux';
 import { Widget } from '../../types/Widget';
 import { SET_CURRENT_USER } from './userActions';
-import { RootState } from '../store';
 
 const initialState = {
     id: '0',
