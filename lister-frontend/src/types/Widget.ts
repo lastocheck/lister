@@ -13,14 +13,14 @@ export interface WidgetItemMedia extends WidgetItem {
     review?: string;
 }
 
-export interface WidgetType {
-    id: string;
-    name: string;
-    categories: {
-        finished: string;
-        notFinished: string;
-    };
-}
+// export interface WidgetType {
+//     id: string;
+//     name: string;
+//     categories: {
+//         finished: string;
+//         notFinished: string;
+//     };
+// }
 
 // export interface WidgetCategory {
 //   id: string;
@@ -29,7 +29,10 @@ export interface WidgetType {
 
 export interface Widget {
     id: string;
-    type: WidgetType;
+    type: string;
+    name: string;
+    categories: Array<string>;
     isPublic: boolean;
-    widgetsIds: Array<string>;
+    itemIds: Array<string>;
+    icon: string;
 }
